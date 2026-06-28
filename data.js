@@ -15,7 +15,7 @@ export const cvData = {
       location: "Lisbon, Portugal",
       date: "2025 - 2028",
       degree: "Bachelor of Science in Management",
-      image: "/nova-banner.jpg",
+      image: "/nova-sbe-banner.jpeg",
       bullets: [
         "#4 Master’s in Management in the World 2025 (Financial Times)",
         "#6 Master’s in Finance in the World 2025 (Financial Times)",
