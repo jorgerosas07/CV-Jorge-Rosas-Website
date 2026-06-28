@@ -199,6 +199,7 @@ export default function Home() {
               src="/profile.jpg"
               alt="Jorge Rosas"
               fill
+              sizes="(max-width: 768px) 100vw, 40vw"
               className={styles.heroImage}
               priority
             />
@@ -239,6 +240,7 @@ export default function Home() {
                     src={edu.image}
                     alt={edu.institution}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className={`${styles.bentoImage} ${
                       edu.logo ? styles.bentoImageContain : ""
                     }`}
@@ -284,6 +286,7 @@ export default function Home() {
                     src={exp.image}
                     alt={exp.company}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className={`${styles.bentoImage} ${
                       exp.logo ? styles.bentoImageContain : ""
                     }`}
@@ -428,6 +431,7 @@ export default function Home() {
               src="/profile.jpg"
               alt="Jorge Rosas"
               fill
+              sizes="(max-width: 768px) 100vw, 40vw"
               className={styles.contactImageLarge}
             />
           </motion.div>
