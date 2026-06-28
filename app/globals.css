@@ -78,7 +78,6 @@ body::before {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(80px);
   /* CSS drift animations replaced by Framer Motion reactive x/y in Orbs.js */
 }
 .orb1 {
@@ -86,21 +85,21 @@ body::before {
   height: 600px;
   top: -100px;
   right: -100px;
-  background: radial-gradient(circle, rgba(120,120,255,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(120,120,255,0.06) 0%, transparent 60%);
 }
 .orb2 {
   width: 500px;
   height: 500px;
   bottom: 20%;
   left: -80px;
-  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
 }
 .orb3 {
   width: 400px;
   height: 400px;
   top: 50%;
   left: 50%;
-  background: radial-gradient(circle, rgba(120,120,255,0.03) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(120,120,255,0.03) 0%, transparent 60%);
 }
 
 @media (max-width: 768px) {

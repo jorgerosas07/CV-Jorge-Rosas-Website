@@ -65,7 +65,6 @@ export default function Cursor() {
         style={{
           position: "fixed", top: 0, left: 0,
           pointerEvents: "none", zIndex: 99999,
-          mixBlendMode: "difference",
           x: dotX, y: dotY,
           translateX: "-50%", translateY: "-50%",
           width: 8, height: 8,

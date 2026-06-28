@@ -102,13 +102,16 @@
 /* Bento Box Container Style */
 .bentoBox {
   background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   padding: 34px;
   position: relative;
   /* Framer Motion handles transform via TiltCard — only transition non-transform props */
   transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 12px;
+  /* Force GPU acceleration layer to avoid full repaint on Iris Xe */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 @media (max-width: 768px) {
