@@ -1,6 +1,6 @@
 export const cvData = {
   name: "Jorge Rosas",
-  email: "76538@novasbe.pt",
+  email: "jorgetouriga@gmail.com",
   phone: "+351 914 043 611",
   linkedin: "https://www.linkedin.com/in/-jorge-rosas/", 
   cv: "/CV_Jorge_Rosas.pdf",
