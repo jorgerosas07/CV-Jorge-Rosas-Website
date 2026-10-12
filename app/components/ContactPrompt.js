@@ -32,7 +32,9 @@ export default function ContactPrompt({ linkedin }) {
         if (!entries.some((e) => e.isIntersecting)) return;
         observer.disconnect();
         try {
-          if (localStorage.getItem(KEY)) return;
+          // Add ?prompt to the URL to see it again, ignoring the "already seen" memory
+          const force = new URLSearchParams(window.location.search).has("prompt");
+          if (!force && localStorage.getItem(KEY)) return;
         } catch {}
         setOpen(true);
       },
