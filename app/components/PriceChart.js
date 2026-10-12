@@ -38,8 +38,8 @@ export default function PriceChart() {
       >
         <defs>
           <linearGradient id="mgniFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#4ade80" stopOpacity="0.28" />
-            <stop offset="100%" stopColor="#4ade80" stopOpacity="0" />
+            <stop offset="0%" style={{ stopColor: "var(--green)", stopOpacity: 0.28 }} />
+            <stop offset="100%" style={{ stopColor: "var(--green)", stopOpacity: 0 }} />
           </linearGradient>
         </defs>
 

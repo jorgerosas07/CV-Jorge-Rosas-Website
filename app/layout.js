@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ScrollProgress from "./components/ScrollProgress";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,8 +26,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        {/* Comparison themes: ?theme=a or ?theme=b (default is the original) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=new URLSearchParams(location.search).get('theme');if(t==='a'||t==='b')document.documentElement.dataset.theme=t}catch(e){}",
+          }}
+        />
+        {process.env.NODE_ENV === "development" && <ThemeSwitcher />}
         <a href="#main" className="skipLink">
           Skip to main content
         </a>

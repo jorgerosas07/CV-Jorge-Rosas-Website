@@ -9,6 +9,13 @@
   --accent-color: #ffffff;
   --accent: #8b9cf8;
   --accent-soft: rgba(139, 156, 248, 0.12);
+  --on-accent: #0a0a14;
+  --green: #4ade80;
+  --nav-bg: rgba(0, 0, 0, 0.8);
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-bg-hover: rgba(255, 255, 255, 0.04);
+  --hero-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.82) 100%);
+  --progress: rgba(255, 255, 255, 0.85);
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   --transition-speed: 0.3s;
@@ -147,7 +154,7 @@ section:last-child {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   padding: 21px 34px;
@@ -225,7 +232,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 }
 .btnAccent {
   background: var(--accent);
-  color: #0a0a14;
+  color: var(--on-accent);
 }
 .btnLinkedin {
   background: #0a66c2;
@@ -250,7 +257,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 }
 .btnOutlineAccent:hover {
   background: var(--accent);
-  color: #0a0a14;
+  color: var(--on-accent);
 }
 
 section { scroll-margin-top: 72px; }
@@ -281,3 +288,40 @@ a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(139, 1
   section { padding: 24px 0; border-color: #ccc; break-inside: avoid-page; }
   a[href^="mailto"]::after { content: " (" attr(href) ")"; }
 }
+
+/* ── Comparison themes (?theme=a | ?theme=b). Default = original. ───────── */
+/* A: lifted dark */
+:root[data-theme="a"] {
+  --bg-color: #121418;
+  --bg-primary: #1a1d23;
+  --bg-secondary: #22262d;
+  --text-secondary: #b6b6c0;
+  --text-muted: #9b9ba6;
+  --border-color: rgba(255, 255, 255, 0.12);
+  --nav-bg: rgba(18, 20, 24, 0.85);
+  --card-bg: #181b21;
+  --card-bg-hover: #1d2128;
+  --hero-overlay: linear-gradient(135deg, rgba(18, 20, 24, 0.9) 0%, rgba(18, 20, 24, 0.62) 100%);
+}
+/* B: light, consulting-style */
+:root[data-theme="b"] {
+  color-scheme: light;
+  --bg-color: #ffffff;
+  --bg-primary: #f5f6f8;
+  --bg-secondary: #eceef2;
+  --text-primary: #0b1220;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --border-color: rgba(11, 18, 32, 0.12);
+  --accent-color: #0b1220;
+  --accent: #3b4fd8;
+  --accent-soft: rgba(59, 79, 216, 0.08);
+  --on-accent: #ffffff;
+  --green: #15803d;
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --card-bg: #ffffff;
+  --card-bg-hover: #f5f6f8;
+  --hero-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.86) 100%);
+  --progress: rgba(11, 18, 32, 0.85);
+}
+:root[data-theme="b"] .btn { color: #ffffff; }
