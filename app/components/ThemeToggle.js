@@ -1,13 +1,17 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 // Switches between theme B (light, default) and A (dark). Choice is remembered.
-export default function ThemeToggle() {
-  const [theme, setTheme] = useState(null);
+// The current theme lives on <html data-theme>, set before paint by a script in layout.js.
+const subscribe = (callback) => {
+  window.addEventListener("themechange", callback);
+  return () => window.removeEventListener("themechange", callback);
+};
+const getSnapshot = () => document.documentElement.dataset.theme || "b";
+const getServerSnapshot = () => "b";
 
-  useEffect(() => {
-    setTheme(document.documentElement.dataset.theme || "b");
-  }, []);
+export default function ThemeToggle() {
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const toggle = () => {
     const next = theme === "a" ? "b" : "a";
@@ -15,7 +19,7 @@ export default function ThemeToggle() {
     try {
       localStorage.setItem("theme", next);
     } catch {}
-    setTheme(next);
+    window.dispatchEvent(new Event("themechange"));
   };
 
   const isDark = theme === "a";
