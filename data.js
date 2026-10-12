@@ -80,6 +80,7 @@ export const cvData = {
       org: "Personal Project",
       role: "AI Website Development",
       date: "Jun 2026 – Present",
+      image: "/personal-project.webp",
       bullets: [
         "Used AI development tools to build and ship two live websites, a commercial site for a family wine business and this portfolio, managing scope, design direction and deployment",
       ],
@@ -92,7 +93,7 @@ export const cvData = {
       image: "/nova-sbe-banner.jpeg",
       date: "Sep 2025 – Jun 2028",
       bullets: ["Santander Excellence Award 2025, tuition scholarship"],
-      note: "Nova SBE’s Master’s in Management ranks #4 worldwide (FT 2025)",
+      note: "Nova SBE’s Master’s in Management ranks #2 worldwide (FT 2026)",
     },
     {
       institution: "Lycée Français International de Porto",
