@@ -61,7 +61,7 @@ export default function ContactPrompt({ linkedin }) {
   };
 
   return (
-    <aside className="askPrompt" aria-label="Work together" aria-live="polite">
+    <aside className="askPrompt" aria-label="Connect on LinkedIn" aria-live="polite">
       <button type="button" className="askClose" onClick={close} aria-label="Close">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" />
@@ -71,8 +71,8 @@ export default function ContactPrompt({ linkedin }) {
         <p className="askTitle">Thanks for stopping by.</p>
       ) : (
         <>
-          <p className="askTitle">Enjoyed the site?</p>
-          <p className="askBody">Would you like me to work with you at your company?</p>
+          <p className="askTitle">Interested in working together?</p>
+          <p className="askBody">Let’s connect on LinkedIn.</p>
           <div className="askActions">
             <a
               href={linkedin}
@@ -81,7 +81,7 @@ export default function ContactPrompt({ linkedin }) {
               className="btnAccent askYes"
               onClick={close}
             >
-              Yes, message me
+              Yes, connect
             </a>
             <button type="button" className="askNo" onClick={decline}>
               No, thanks
