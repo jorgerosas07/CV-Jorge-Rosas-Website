@@ -188,6 +188,18 @@ export default function Home() {
         <ul className={styles.eduList}>
           {cvData.education.map((edu) => (
             <li key={edu.institution} className={styles.eduItem}>
+              {edu.image && (
+                <div className={styles.eduImage}>
+                  <Image
+                    src={edu.image}
+                    alt={edu.institution}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 320px"
+                    className={styles.bentoImage}
+                  />
+                </div>
+              )}
+              <div className={styles.eduBody}>
               <div className={styles.eduHead}>
                 <div>
                   <h3 className={styles.eduTitle}>{edu.institution}</h3>
@@ -201,6 +213,7 @@ export default function Home() {
                 ))}
               </ul>
               {edu.note && <p className={styles.footnote}>{edu.note}</p>}
+              </div>
             </li>
           ))}
         </ul>

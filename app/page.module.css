@@ -350,7 +350,10 @@
 
 /* Education: simple list, no photos */
 .eduList { list-style: none; border-top: 1px solid var(--border-color); }
-.eduItem { padding: 34px 0; border-bottom: 1px solid var(--border-color); }
+.eduItem { padding: 34px 0; border-bottom: 1px solid var(--border-color); display: grid; grid-template-columns: 320px 1fr; gap: 34px; align-items: start; }
+.eduImage { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--border-color); }
+.eduBody { min-width: 0; }
+@media (max-width: 768px) { .eduItem { grid-template-columns: 1fr; gap: 21px; } }
 .eduHead { display: flex; justify-content: space-between; align-items: baseline; gap: 21px; margin-bottom: 13px; }
 .eduTitle { font-size: 1.35rem; font-weight: 600; }
 .eduDegree { color: var(--text-secondary); font-size: 0.95rem; margin-top: 4px; }
