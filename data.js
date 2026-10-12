@@ -13,7 +13,7 @@ export const cvData = {
     proof: [
       { value: "Tuition scholarship", label: "Santander Excellence Award 2025, Nova SBE" },
       { value: "+104.6%", label: "realised return, Magnite pitch (PMC)", positive: true },
-      { value: "18th / 90", label: "Morgan Stanley Amplify ME Markets" },
+      { value: "4 languages", label: "Portuguese, English, French, Spanish (B2)" },
     ],
   },
   cases: {
