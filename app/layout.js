@@ -2,6 +2,8 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import ScrollProgress from "./components/ScrollProgress";
 import ThemeToggle from "./components/ThemeToggle";
+import ContactPrompt from "./components/ContactPrompt";
+import { cvData } from "../data";
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -53,6 +55,7 @@ export default function RootLayout({ children }) {
           </div>
         </nav>
         <main id="main">{children}</main>
+        <ContactPrompt linkedin={cvData.linkedin} />
         <footer className="footer">
           <p>© {new Date().getFullYear()} Jorge Rosas</p>
         </footer>

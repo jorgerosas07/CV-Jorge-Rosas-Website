@@ -16,6 +16,7 @@
   --card-bg-hover: rgba(255, 255, 255, 0.04);
   --grid-line: rgba(255, 255, 255, 0.06);
   --progress: rgba(255, 255, 255, 0.85);
+  --shadow: rgba(0, 0, 0, 0.45);
   --font-sans: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   --transition-speed: 0.3s;
@@ -283,7 +284,7 @@ a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(139, 1
 /* Print: white page, everything visible, no chrome */
 @media print {
   html, body { background: #fff !important; color: #000 !important; }
-  .navbar, .footer, .skipLink, .btn, .btnGhost, .btnAccent, .btnLinkedin, .btnOutlineAccent { display: none !important; }
+  .navbar, .footer, .skipLink, .askPrompt, .btn, .btnGhost, .btnAccent, .btnLinkedin, .btnOutlineAccent { display: none !important; }
   * { color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
   *, *::before { opacity: 1 !important; transform: none !important; }
   section { padding: 24px 0; border-color: #ccc; break-inside: avoid-page; }
@@ -307,6 +308,7 @@ a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(139, 1
   --card-bg-hover: #20232a;
   --grid-line: rgba(236, 236, 239, 0.05);
   --progress: rgba(236, 236, 239, 0.8);
+  --shadow: rgba(0, 0, 0, 0.5);
 }
 /* B: warm light. Off-white canvas (no glaring pure white), white surfaces, one warm grey family, off-black text */
 :root[data-theme="b"] {
@@ -328,6 +330,7 @@ a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(139, 1
   --card-bg-hover: #fcfcfa;
   --grid-line: rgba(22, 22, 20, 0.05);
   --progress: rgba(22, 22, 20, 0.8);
+  --shadow: rgba(22, 22, 20, 0.14);
 }
 :root[data-theme="b"] .btn { color: #ffffff; }
 
@@ -345,3 +348,51 @@ a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(139, 1
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .themeToggle:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Contact prompt: small card, bottom-right, bottom sheet on phones */
+.askPrompt {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 150;
+  width: min(340px, calc(100vw - 40px));
+  padding: 22px 22px 20px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px var(--shadow);
+  animation: askIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes askIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .askPrompt { animation: none; } }
+.askTitle { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; padding-right: 24px; }
+.askBody { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5; margin: 6px 0 16px; }
+.askActions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.askYes { padding: 10px 18px; font-size: 0.9rem; }
+.askNo {
+  background: transparent;
+  border: 0;
+  padding: 10px 6px;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.askNo:hover { color: var(--text-primary); }
+.askClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.askClose:hover { color: var(--text-primary); background: var(--bg-secondary); }
+@media (max-width: 640px) { .askPrompt { right: 12px; bottom: 12px; left: 12px; width: auto; } }
