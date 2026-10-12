@@ -268,7 +268,7 @@ export default function Home() {
           </motion.p>
           <motion.div variants={fadeInUp} className={styles.heroActions}>
             <a href={`mailto:${cvData.email}`} className="btnAccent">
-              Email me
+              Email Me
             </a>
             <a
               href={cvData.linkedin}

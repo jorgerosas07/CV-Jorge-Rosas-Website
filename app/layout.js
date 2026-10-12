@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 const description =
   "Jorge Rosas, BSc Management student at Nova SBE. Strategy and investing: NOS innovation sprint lead proposal, Magnite pitch with +104.6% realised return.";
 
+export const viewport = {
+  themeColor: "#0a0a0a",
+  colorScheme: "dark",
+};
+
 export const metadata = {
   metadataBase: new URL("https://cv-jorge-rosas-website.vercel.app"),
   title: "Jorge Rosas | Management Student @ Nova SBE",
@@ -23,6 +28,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <a href="#main" className="skipLink">
+          Skip to main content
+        </a>
         <ScrollProgress />
         <nav className="navbar">
           <div className="nav-container">
@@ -36,7 +44,7 @@ export default function RootLayout({ children }) {
             </div>
           </div>
         </nav>
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <footer className="footer">
           <p>© {new Date().getFullYear()} Jorge Rosas</p>
         </footer>

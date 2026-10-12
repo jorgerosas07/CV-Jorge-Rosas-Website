@@ -19,16 +19,16 @@ export const cvData = {
   cases: {
     nos: {
       tag: "Strategy case",
-      title: "NOS: why customers don't know about its sustainability efforts",
+      title: "NOS: why customers don’t know about its sustainability efforts",
       meta: "Nova SBE × NOS Project X Innovation Sprint · Sep–Nov 2025",
       steps: [
         {
           label: "Situation",
-          text: "Selected as the sole bachelor's student on Nova SBE's flagship innovation sprint with NOS (€3.74B EV), tasked with a sustainability strategy for the core business and customer app.",
+          text: "Selected as the sole bachelor’s student on Nova SBE’s flagship innovation sprint with NOS (€3.74B EV), tasked with a sustainability strategy for the core business and customer app.",
         },
         {
           label: "Insight",
-          text: "Led 11 customer interviews. Near-universal unawareness of NOS's sustainability initiatives, even among long-tenure customers.",
+          text: "Led 11 customer interviews. Near-universal unawareness of NOS’s sustainability initiatives, even among long-tenure customers.",
         },
         {
           label: "Recommendation",
@@ -47,7 +47,7 @@ export const cvData = {
       returnLabel: "Realised return",
       returnValue: "+104.64%",
       summary:
-        "I built the industry and competitive analysis behind the team's valuation ($17.4–25.3 DCF fair value; recommended at $13.42, bought at $13.00) and presented the thesis to the Investment Committee. Sized at 4% of the $1.49M fund, it added about 4.2 points to fund return.",
+        "I built the industry and competitive analysis behind the team’s valuation ($17.4–25.3 DCF fair value; recommended at $13.42, bought at $13.00) and presented the thesis to the Investment Committee. Sized at 4% of the $1.49M fund, it added about 4.2 points to fund return.",
       footnote:
         "Line: MGNI daily close (Yahoo Finance).",
     },
@@ -73,7 +73,7 @@ export const cvData = {
       image: "/gpc-logo.png",
       logoDark: true,
       bullets: [
-        "Will search for a target company for the club's blue economy fund, with a midterm presentation in late October and a final presentation in November",
+        "Will search for a target company for the club’s blue economy fund, with a midterm presentation in late October and a final presentation in November",
       ],
     },
     {
@@ -92,7 +92,7 @@ export const cvData = {
       date: "Sep 2025 – Jun 2028",
       image: "/nova-sbe-banner.jpeg",
       bullets: ["Santander Excellence Award 2025, tuition scholarship"],
-      note: "School: #4 Master's in Management (FT 2025)",
+      note: "School: #4 Master’s in Management (FT 2025)",
     },
     {
       institution: "Lycée Français International de Porto",
@@ -132,7 +132,7 @@ export const cvData = {
     },
   ],
   contact: {
-    heading: "Let's talk.",
+    heading: "Let’s talk.",
     text: "Open to summer internships in consulting, investing and tech across London, Madrid, Lisbon and Dublin.",
     facts: "Lisbon · Available summer 2027 · EU citizen",
   },

@@ -21,6 +21,7 @@
 }
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
 }
 
@@ -114,7 +115,7 @@ section:last-child {
   font-weight: 500;
   border-radius: 9999px; /* Pill shape */
   border: 1px solid var(--accent-color);
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   box-shadow: 0 4px 14px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -137,7 +138,7 @@ section:last-child {
   font-weight: 500;
   border-radius: 9999px;
   border: 1px solid var(--border-color);
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .btnGhost:hover {
@@ -260,3 +261,20 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 }
 
 section { scroll-margin-top: 72px; }
+
+h1, h2, h3 { text-wrap: balance; }
+a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(139, 156, 248, 0.2); }
+
+.skipLink {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 200;
+  padding: 10px 18px;
+  background: var(--text-primary);
+  color: #000;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  transform: translateY(-200%);
+}
+.skipLink:focus-visible { transform: translateY(0); }
