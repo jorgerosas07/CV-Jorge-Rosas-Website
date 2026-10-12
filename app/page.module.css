@@ -143,13 +143,10 @@
 }
 
 .bentoDate {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  border: 1px solid var(--border-color);
-  padding: 5px 13px;
-  background: var(--bg-primary);
-  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .bentoImageContainer {
@@ -191,10 +188,13 @@
 }
 
 .bentoBullets li::before {
-  content: '—';
+  content: '';
   position: absolute;
-  left: 0;
-  color: var(--text-muted);
+  left: 2px;
+  top: 0.68em;
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
 }
 
 .pitchDownloads {
@@ -347,3 +347,11 @@
 .bentoImageDark { background-color: #0d1226; }
 .contactFacts { color: var(--text-muted); font-size: 0.9rem; max-width: 62ch; margin: -13px 0 34px; line-height: 1.6; }
 @media (max-width: 640px) { .chartLabelStrong { font-size: 17px; } .chartTick { font-size: 15px; } }
+
+/* Education: simple list, no photos */
+.eduList { list-style: none; border-top: 1px solid var(--border-color); }
+.eduItem { padding: 34px 0; border-bottom: 1px solid var(--border-color); }
+.eduHead { display: flex; justify-content: space-between; align-items: baseline; gap: 21px; margin-bottom: 13px; }
+.eduTitle { font-size: 1.35rem; font-weight: 600; }
+.eduDegree { color: var(--text-secondary); font-size: 0.95rem; margin-top: 4px; }
+@media (max-width: 640px) { .eduHead { flex-direction: column; gap: 6px; } }

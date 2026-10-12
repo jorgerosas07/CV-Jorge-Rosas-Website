@@ -8,23 +8,6 @@ import PriceChart from "./components/PriceChart";
 
 const EASE = [0.22, 1.0, 0.36, 1.0];
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
-};
-
-const stagger = (staggerChildren = 0.08) => ({
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren, delayChildren: 0.04 } },
-});
-
-const reveal = {
-  initial: "hidden",
-  whileInView: "visible",
-  viewport: { once: true, margin: "-8%" },
-  variants: stagger(),
-};
-
 function Steps({ steps }) {
   return (
     <dl className={styles.steps}>
@@ -132,21 +115,21 @@ export default function Home() {
       </div>
 
       {/* ── Selected work ──────────────────────────────────────────────── */}
-      <motion.section id="work" {...reveal}>
-        <motion.h2 variants={fadeInUp} className="overline">
+      <section id="work">
+        <h2 className="overline">
           Selected work
-        </motion.h2>
+        </h2>
 
         {/* NOS */}
-        <motion.article variants={fadeInUp} className={styles.caseCard}>
+        <article className={styles.caseCard}>
           <p className={styles.caseTag}>{cases.nos.tag}</p>
           <h3 className={styles.caseTitle}>{cases.nos.title}</h3>
           <p className={styles.caseMeta}>{cases.nos.meta}</p>
           <Steps steps={cases.nos.steps} />
-        </motion.article>
+        </article>
 
         {/* Magnite */}
-        <motion.article variants={fadeInUp} className={styles.caseCard}>
+        <article className={styles.caseCard}>
           <p className={styles.caseTag}>{mg.tag}</p>
           <h3 className={styles.caseTitle}>{mg.title}</h3>
           <p className={styles.caseMeta}>{mg.meta}</p>
@@ -160,17 +143,17 @@ export default function Home() {
           </div>
           <PriceChart />
           <p className={styles.footnote}>{mg.footnote}</p>
-        </motion.article>
-      </motion.section>
+        </article>
+      </section>
 
       {/* ── Experience ─────────────────────────────────────────────────── */}
-      <motion.section id="experience" {...reveal}>
-        <motion.h2 variants={fadeInUp} className="overline">
+      <section id="experience">
+        <h2 className="overline">
           Experience and activities
-        </motion.h2>
-        <motion.div className={styles.grid} variants={stagger(0.08)}>
+        </h2>
+        <div className={styles.grid}>
           {cvData.experience.map((exp) => (
-            <motion.div key={exp.org} variants={fadeInUp} className={styles.bentoBox}>
+            <div key={exp.org} className={styles.bentoBox}>
               <div className={styles.bentoHeader}>
                 <h3 className={styles.bentoTitle}>{exp.org}</h3>
                 <p className={styles.bentoSubtitle}>{exp.role}</p>
@@ -192,81 +175,72 @@ export default function Home() {
                   <li key={j}>{b}</li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
       {/* ── Education ──────────────────────────────────────────────────── */}
-      <motion.section id="education" {...reveal}>
-        <motion.h2 variants={fadeInUp} className="overline">
+      <section id="education">
+        <h2 className="overline">
           Education
-        </motion.h2>
-        <motion.div className={styles.grid} variants={stagger(0.08)}>
+        </h2>
+        <ul className={styles.eduList}>
           {cvData.education.map((edu) => (
-            <motion.div key={edu.institution} variants={fadeInUp} className={styles.bentoBox}>
-              <div className={styles.bentoHeader}>
-                <h3 className={styles.bentoTitle}>{edu.institution}</h3>
-                <p className={styles.bentoSubtitle}>{edu.degree}</p>
+            <li key={edu.institution} className={styles.eduItem}>
+              <div className={styles.eduHead}>
+                <div>
+                  <h3 className={styles.eduTitle}>{edu.institution}</h3>
+                  <p className={styles.eduDegree}>{edu.degree}</p>
+                </div>
                 <span className={styles.bentoDate}>{edu.date}</span>
               </div>
-              {edu.image && (
-                <div className={styles.bentoImageContainer}>
-                  <Image
-                    src={edu.image}
-                    alt={edu.institution}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className={styles.bentoImage}
-                  />
-                </div>
-              )}
               <ul className={styles.bentoBullets}>
                 {edu.bullets.map((b, j) => (
                   <li key={j}>{b}</li>
                 ))}
               </ul>
               {edu.note && <p className={styles.footnote}>{edu.note}</p>}
-            </motion.div>
+            </li>
           ))}
-        </motion.div>
-      </motion.section>
+        </ul>
+      </section>
 
       {/* ── Skills ─────────────────────────────────────────────────────── */}
-      <motion.section id="skills" {...reveal}>
-        <motion.h2 variants={fadeInUp} className="overline">
+      <section id="skills">
+        <h2 className="overline">
           Skills, languages and certifications
-        </motion.h2>
-        <motion.div className={styles.skillGroups} variants={stagger(0.08)}>
+        </h2>
+        <div className={styles.skillGroups}>
           {cvData.skills.map((g) => (
-            <motion.div key={g.group} variants={fadeInUp} className={styles.skillGroup}>
+            <div key={g.group} className={styles.skillGroup}>
               <h3>{g.group}</h3>
               <ul>
                 {g.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
       {/* ── Contact ────────────────────────────────────────────────────── */}
-      <motion.section id="contact" className={styles.contactSection} {...reveal}>
+      <section id="contact" className={styles.contactSection}>
         <div className={styles.contactText}>
-          <motion.h2 variants={fadeInUp} className="overline">
+          <h2 className="overline">
             Contact
-          </motion.h2>
-          <motion.p variants={fadeInUp} className={styles.contactHeading}>
+          </h2>
+          <p className={styles.contactHeading}>
             {cvData.contact.heading}
-          </motion.p>
-          <motion.p variants={fadeInUp} className={styles.contactBody}>
+          </p>
+          <p className={styles.contactBody}>
             {cvData.contact.text}
-          </motion.p>
-          <motion.p variants={fadeInUp} className={styles.contactFacts}>
+          </p>
+          <p className={styles.contactFacts}>
             {cvData.contact.facts}
-          </motion.p>
-          <motion.div variants={fadeInUp} className={styles.heroActions}>
+          </p>
+          <div className={styles.heroActions}>
             <a href={`mailto:${cvData.email}`} className="btnAccent">
               Email Me
             </a>
@@ -278,9 +252,9 @@ export default function Home() {
             >
               LinkedIn
             </a>
-          </motion.div>
+          </div>
         </div>
-      </motion.section>
+      </section>
     </>
   );
 }

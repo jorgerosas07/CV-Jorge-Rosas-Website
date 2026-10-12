@@ -20,7 +20,6 @@ export const metadata = {
     title: "Jorge Rosas | Management Student @ Nova SBE",
     description,
     type: "website",
-    images: ["/profile.jpg"],
   },
 };
 

@@ -271,3 +271,13 @@ a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(139, 1
   transform: translateY(-200%);
 }
 .skipLink:focus-visible { transform: translateY(0); }
+
+/* Print: white page, everything visible, no chrome */
+@media print {
+  html, body { background: #fff !important; color: #000 !important; }
+  .navbar, .footer, .skipLink, .btn, .btnGhost, .btnAccent, .btnLinkedin, .btnOutlineAccent { display: none !important; }
+  * { color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+  *, *::before { opacity: 1 !important; transform: none !important; }
+  section { padding: 24px 0; border-color: #ccc; break-inside: avoid-page; }
+  a[href^="mailto"]::after { content: " (" attr(href) ")"; }
+}

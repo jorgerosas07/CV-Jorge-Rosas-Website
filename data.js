@@ -90,15 +90,13 @@ export const cvData = {
       institution: "Nova School of Business and Economics",
       degree: "Bachelor of Science in Management",
       date: "Sep 2025 – Jun 2028",
-      image: "/nova-sbe-banner.jpeg",
       bullets: ["Santander Excellence Award 2025, tuition scholarship"],
-      note: "School: #4 Master’s in Management (FT 2025)",
+      note: "Nova SBE’s Master’s in Management ranks #4 worldwide (FT 2025)",
     },
     {
       institution: "Lycée Français International de Porto",
       degree: "French Baccalauréat",
       date: "Sep 2022 – Jun 2025",
-      image: "/lycee-porto.jpg",
       bullets: [
         "Mention Très Bien",
         "19/20 Economics, 19.4/20 Further Economics",
