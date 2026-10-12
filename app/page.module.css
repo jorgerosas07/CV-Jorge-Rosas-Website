@@ -12,10 +12,14 @@
 .heroBg {
   position: absolute;
   inset: 0;
-  background-image: var(--hero-overlay), url('/hero-bg.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* Faint ledger grid that fades out; replaces the stock trading-chart photo */
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 30% 40%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 80% at 30% 40%, #000 0%, transparent 75%);
   z-index: 0;
 }
 
