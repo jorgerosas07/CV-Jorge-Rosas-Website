@@ -1,9 +1,9 @@
-import { Inter } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import ScrollProgress from "./components/ScrollProgress";
 import ThemeToggle from "./components/ThemeToggle";
 
-const inter = Inter({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"] });
 
 const description =
   "Jorge Rosas, BSc Management student at Nova SBE. Strategy and investing: NOS innovation sprint lead proposal, Magnite pitch with +104.6% realised return.";
@@ -27,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={geist.className}>
         {/* Theme: B (light) by default, A (dark) if the visitor chose it. Runs before paint. */}
         <script
           dangerouslySetInnerHTML={{
