@@ -6,7 +6,11 @@ Reference for keeping the site consistent. Principles follow the taste-skill dia
 ## Tone
 Plain, answer-first copy. No sci-fi labels, no em dashes in copy. First person is fine (personal site).
 
-## Colour
+## Themes
+Light (B) is the default; dark (A) via the moon/sun toggle in the nav, remembered in localStorage.
+All colours are CSS variables in `app/globals.css`; themes only override variables.
+
+## Colour (dark values; light theme overrides in globals.css)
 - Background `#0a0a0a`, surface `#111111`, text `#ffffff`, secondary `#a1a1aa`, muted `#8a8a94`
 - Accent (structure and information only): `--accent #8b9cf8`
 - Green `#4ade80`: **returns only** (the +104.6% figures and the price line). Never decorative.

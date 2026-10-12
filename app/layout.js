@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ScrollProgress from "./components/ScrollProgress";
-import ThemeSwitcher from "./components/ThemeSwitcher";
+import ThemeToggle from "./components/ThemeToggle";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,14 +28,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        {/* Comparison themes: ?theme=a or ?theme=b (default is the original) */}
+        {/* Theme: B (light) by default, A (dark) if the visitor chose it. Runs before paint. */}
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "try{var t=new URLSearchParams(location.search).get('theme');if(t==='a'||t==='b')document.documentElement.dataset.theme=t}catch(e){}",
+              "(function(){var t='b';try{var s=localStorage.getItem('theme');if(s==='a'||s==='b')t=s}catch(e){}document.documentElement.dataset.theme=t})()",
           }}
         />
-        {process.env.NODE_ENV === "development" && <ThemeSwitcher />}
         <a href="#main" className="skipLink">
           Skip to main content
         </a>
@@ -49,6 +48,7 @@ export default function RootLayout({ children }) {
               <a href="#education">Education</a>
               <a href="#skills">Skills</a>
               <a href="#contact">Contact</a>
+              <ThemeToggle />
             </div>
           </div>
         </nav>

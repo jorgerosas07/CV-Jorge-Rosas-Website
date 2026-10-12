@@ -170,7 +170,8 @@
   background-color: #ffffff;
 }
 
-.bentoBox:hover .bentoImage {
+.bentoBox:hover .bentoImage,
+.eduItem:hover .bentoImage {
   transform: scale(1.04);
 }
 
