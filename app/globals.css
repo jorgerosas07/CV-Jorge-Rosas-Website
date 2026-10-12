@@ -291,39 +291,43 @@ a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(139, 1
 }
 
 /* ── Comparison themes (?theme=a | ?theme=b). Default = original. ───────── */
-/* A: lifted dark */
+/* A: soft dark. Tinted charcoal (no pure black), one cool grey family, off-white text, desaturated accent */
 :root[data-theme="a"] {
-  --bg-color: #121418;
-  --bg-primary: #1a1d23;
-  --bg-secondary: #22262d;
-  --text-secondary: #b6b6c0;
-  --text-muted: #9b9ba6;
-  --border-color: rgba(255, 255, 255, 0.12);
-  --nav-bg: rgba(18, 20, 24, 0.85);
-  --card-bg: #181b21;
-  --card-bg-hover: #1d2128;
-  --grid-line: rgba(255, 255, 255, 0.06);
+  --bg-color: #15171c;
+  --bg-primary: #1b1e24;
+  --bg-secondary: #22252c;
+  --text-primary: #ececef;
+  --text-secondary: #a9abb5;
+  --text-muted: #8c8f9a;
+  --border-color: rgba(236, 236, 239, 0.09);
+  --accent: #93a0e8;
+  --accent-soft: rgba(147, 160, 232, 0.12);
+  --nav-bg: rgba(21, 23, 28, 0.85);
+  --card-bg: #1b1e24;
+  --card-bg-hover: #20232a;
+  --grid-line: rgba(236, 236, 239, 0.05);
+  --progress: rgba(236, 236, 239, 0.8);
 }
-/* B: light, consulting-style */
+/* B: warm light. Off-white canvas (no glaring pure white), white surfaces, one warm grey family, off-black text */
 :root[data-theme="b"] {
   color-scheme: light;
-  --bg-color: #ffffff;
-  --bg-primary: #f5f6f8;
-  --bg-secondary: #eceef2;
-  --text-primary: #0b1220;
-  --text-secondary: #4b5563;
-  --text-muted: #6b7280;
-  --border-color: rgba(11, 18, 32, 0.12);
-  --accent-color: #0b1220;
+  --bg-color: #f7f6f3;
+  --bg-primary: #ffffff;
+  --bg-secondary: #efeee9;
+  --text-primary: #161614;
+  --text-secondary: #4a4a46;
+  --text-muted: #787774;
+  --border-color: #e6e4de;
+  --accent-color: #161614;
   --accent: #3b4fd8;
-  --accent-soft: rgba(59, 79, 216, 0.08);
+  --accent-soft: rgba(59, 79, 216, 0.07);
   --on-accent: #ffffff;
-  --green: #15803d;
-  --nav-bg: rgba(255, 255, 255, 0.88);
+  --green: #1f7a3f;
+  --nav-bg: rgba(247, 246, 243, 0.85);
   --card-bg: #ffffff;
-  --card-bg-hover: #f5f6f8;
-  --grid-line: rgba(11, 18, 32, 0.06);
-  --progress: rgba(11, 18, 32, 0.85);
+  --card-bg-hover: #fcfcfa;
+  --grid-line: rgba(22, 22, 20, 0.05);
+  --progress: rgba(22, 22, 20, 0.8);
 }
 :root[data-theme="b"] .btn { color: #ffffff; }
 
