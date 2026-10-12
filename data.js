@@ -47,7 +47,7 @@ export const cvData = {
       returnLabel: "Realised return",
       returnValue: "+104.64%",
       summary:
-        "I built the industry and competitive analysis behind the team’s valuation ($17.4–25.3 DCF fair value; recommended at $13.42, bought at $13.00) and presented the thesis to the Investment Committee. Sized at 4% of the $1.49M fund, it added about 4.2 points to fund return.",
+        "I built the industry and competitive analysis behind the team’s valuation ($17.4–25.3 DCF fair value; recommended at $13.42, bought at $13.00) and presented the thesis to the Investment Committee. Sized at 4% of the $1.49M fund.",
       footnote:
         "Line: MGNI daily close (Yahoo Finance).",
     },
